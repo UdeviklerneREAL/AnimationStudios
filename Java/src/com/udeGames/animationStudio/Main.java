@@ -2,7 +2,6 @@ package com.udeGames.animationStudio;
 
 import javax.swing.*;
 import java.awt.*;
-import net.bramp.ffmpeg.*;
 
 public class Main extends JFrame {
 
@@ -13,7 +12,6 @@ public class Main extends JFrame {
         setTitle(title);
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         setVisible(true);
-        FFmpeg
     }
 
     public void add() {

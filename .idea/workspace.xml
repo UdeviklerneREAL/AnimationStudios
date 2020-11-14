@@ -1,31 +1,208 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dbbd18a-050c-4a31-bfa7-ee8c2a2fe18a" name="Default Changelist" comment="" />
+    <list default="true" id="20b244dd-e127-4b08-924e-1e2a12421fc0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Java/animateStudio.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/src/com/udeGames/animationStudio/JRenderPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/src/com/udeGames/animationStudio/ffmpeg/FFmpegUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/src/com/udeGames/animationStudio/panel/components/AbstractPanelComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/src/com/udeGames/animationStudio/panel/components/Text.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/vendor/ffmpeg/bin/ffmpeg.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/vendor/ffmpeg/bin/ffplay.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/vendor/ffmpeg/bin/ffprobe.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/vendor/ffmpeg/jar/commons-io-2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/vendor/ffmpeg/jar/commons-lang3-3.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/vendor/ffmpeg/jar/ffmpeg-0.6.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/vendor/ffmpeg/jar/gson-2.8.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/vendor/ffmpeg/jar/guava-20.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/vendor/ffmpeg/jar/modelmapper-0.7.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Java/vendor/ffmpeg/jar/slf4j-api-1.7.25.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Python/Libsync.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Python/Python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Python/runGentle.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Python/vendor/Gentle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/net_bramp_ffmpeg_ffmpeg_0_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/net_bramp_ffmpeg_ffmpeg_0_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/src/com/udeGames/animationStudio/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java/src/com/udeGames/animationStudio/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/src/com/udeGames/animationStudio/panel/AbstractPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java/src/com/udeGames/animationStudio/panel/AbstractPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/src/com/udeGames/animationStudio/panel/AbstractPanelComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java/src/com/udeGames/animationStudio/panel/AnimatePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java/src/com/udeGames/animationStudio/panel/AnimatePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/animateStudio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/animateStudio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-io-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons-lang3-3.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ffmpeg-0.6.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/gson-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/guava-20.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modelmapper-0.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/ffmpeg/java-libs/commons-io-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/ffmpeg/java-libs/commons-lang3-3.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/ffmpeg/java-libs/ffmpeg-0.6.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/ffmpeg/java-libs/gson-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/ffmpeg/java-libs/guava-20.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/ffmpeg/java-libs/modelmapper-0.7.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/ffmpeg/java-libs/slf4j-api-1.7.25.jar" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1jvCSrngJ5jOcR9BHTG0iv8YzRO" />
+  <component name="ProjectId" id="1kEtfeQRo7z2NTpWE8AVJawgpLT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path" value="C:\dev\animateStudio\Java\vendor\ffmpeg\jar" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.udeGames.animationStudio.Main" />
+      <module name="animateStudio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udeGames.animationStudio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7dbbd18a-050c-4a31-bfa7-ee8c2a2fe18a" name="Default Changelist" comment="" />
-      <created>1604675182001</created>
+      <changelist id="20b244dd-e127-4b08-924e-1e2a12421fc0" name="Default Changelist" comment="" />
+      <created>1605277687697</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1604675182001</updated>
+      <updated>1605277687697</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="435" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605284103610">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="435" y="166" key="#com.intellij.fileTypes.FileTypeChooser/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605284103610" />
+    <state x="752" y="130" key="#com.intellij.ide.util.MemberChooser" timestamp="1605337053775">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="752" y="130" key="#com.intellij.ide.util.MemberChooser/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605337053775" />
+    <state x="410" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605334477692">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="410" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605334477692" />
+    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1605283494411">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="460" y="119" key="FileChooserDialogImpl/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605283494411" />
+    <state width="1317" height="179" key="GridCell.Tab.0.bottom" timestamp="1605337174088">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="179" key="GridCell.Tab.0.bottom/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605337174088" />
+    <state width="1317" height="179" key="GridCell.Tab.0.center" timestamp="1605337174088">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="179" key="GridCell.Tab.0.center/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605337174088" />
+    <state width="1317" height="179" key="GridCell.Tab.0.left" timestamp="1605337174088">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="179" key="GridCell.Tab.0.left/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605337174088" />
+    <state width="1317" height="179" key="GridCell.Tab.0.right" timestamp="1605337174088">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="179" key="GridCell.Tab.0.right/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605337174088" />
+    <state width="1317" height="223" key="GridCell.Tab.1.bottom" timestamp="1605336938135">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.1.bottom/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605336938135" />
+    <state width="1317" height="223" key="GridCell.Tab.1.center" timestamp="1605336938135">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.1.center/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605336938135" />
+    <state width="1317" height="223" key="GridCell.Tab.1.left" timestamp="1605336938135">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.1.left/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605336938135" />
+    <state width="1317" height="223" key="GridCell.Tab.1.right" timestamp="1605336938135">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.1.right/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605336938135" />
+    <state x="160" y="0" key="SettingsEditor" timestamp="1605283911295">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="160" y="0" key="SettingsEditor/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605283911295" />
+    <state x="384" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1605283739784">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="384" y="256" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605283739784" />
   </component>
 </project>

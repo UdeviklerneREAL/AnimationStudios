@@ -1,3 +1,3 @@
-[submodule "Java\\vendor\\ffmpeg-cli-wrapper"]
-	path = Java\\vendor\\ffmpeg-cli-wrapper
-	url = https://github.com/bramp/ffmpeg-cli-wrapper
+[submodule "Python\\vendor\\Gentle"]
+	path = Python\\vendor\\Gentle
+	url = https://github.com/lowerquality/gentle

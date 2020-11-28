@@ -22,21 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b385e4ee-aa3d-4c54-8e27-b12145b739f0" name="Default Changelist" comment="add">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid12324.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hs_err_pid13940.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/ImGuiLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/ImGuiUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/saving/Dialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/saving/SLSSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firstPartyLibarys/saveLoadSystem.jar" beforeDir="false" afterPath="$PROJECT_DIR$/firstPartyLibarys/saveLoadSystem.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/basis33.ttf" beforeDir="false" />
-    </list>
+    <list default="true" id="b385e4ee-aa3d-4c54-8e27-b12145b739f0" name="Default Changelist" comment="add" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -189,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605890564945</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add">
+      <created>1606569883453</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606569883453</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,10 +267,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605937610873" />
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1605890560620">
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2" timestamp="1606569891812">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="272" y="97" key="Vcs.Push.Dialog.v2/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1605890560620" />
+    <state x="272" y="97" key="Vcs.Push.Dialog.v2/1360.0.1280.984/0.0.1360.728@0.0.1360.728" timestamp="1606569891812" />
     <state x="1428" y="-18" width="852" height="715" maximized="true" key="dock-window-1" timestamp="1606567863448">
       <screen x="1360" y="0" width="1280" height="984" />
     </state>

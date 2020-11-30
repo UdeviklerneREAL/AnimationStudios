@@ -19,7 +19,7 @@ public class ImGuiLayer {
 
         final ImGuiIO io = ImGui.getIO();
 
-        io.setIniFilename(null);
+        io.setIniFilename("imgui.ini");
         io.addConfigFlags(ImGuiConfigFlags.NavEnableKeyboard);
         io.addConfigFlags(ImGuiConfigFlags.DockingEnable);
         io.addConfigFlags(ImGuiConfigFlags.ViewportsEnable);
@@ -28,9 +28,9 @@ public class ImGuiLayer {
         final ImFontAtlas fontAtlas = io.getFonts();
         final ImFontConfig fontConfig = new ImFontConfig();
 
-        fontConfig.setGlyphRanges(fontAtlas.getGlyphRangesCyrillic());
+        fontConfig.setGlyphRanges(fontAtlas.getGlyphRangesDefault());
 
-        fontAtlas.addFontDefault();
+        fontAtlas.addFontFromFileTTF("assets/fonts/LucidaGrande.ttf", 15, fontConfig);
 
         fontConfig.destroy();
 
@@ -63,6 +63,7 @@ public class ImGuiLayer {
     }
 
     public void dispose() {
+        imGuiUI.dispose();
         imGuiG13.dispose();
         imGuiGLFW.dispose();
 

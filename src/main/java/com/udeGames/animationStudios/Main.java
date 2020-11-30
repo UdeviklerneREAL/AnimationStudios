@@ -4,10 +4,13 @@ import com.udeGames.animationStudios.imGui.ImGuiLayer;
 import org.lwjgl.glfw.Callbacks;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWErrorCallback;
+import org.lwjgl.glfw.GLFWImage;
+import org.lwjgl.glfw.GLFWImage.Buffer;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
+import java.io.IOException;
 import java.util.Objects;
 
 public class Main {
@@ -28,6 +31,7 @@ public class Main {
     }
 
     public void run(String title) {
+
         GLFWErrorCallback.createPrint(System.err).set();
 
         if (!GLFW.glfwInit()) {
@@ -51,11 +55,22 @@ public class Main {
 
         GLFW.glfwMakeContextCurrent(window);
 
+        try {
+            Buffer buffer = GLFWImage.create(2);
+            GLFWImage icon = GLFWImage.create().set(250, 250, ImageLoader.loadIcon("assets/images/logo.png"));
+            GLFWImage smallIcon = GLFWImage.create().set(125, 125, ImageLoader.loadIcon("assets/images/smallLogo.png"));
+            buffer.put(0, icon);
+            buffer.put(1, smallIcon);
+            GLFW.glfwSetWindowIcon(window, buffer);
+        } catch (IOException e) {
+            System.out.println("Can't load image");
+        }
+
         GLFW.glfwShowWindow(window);
 
         GL.createCapabilities();
 
-        GL11.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+        GL11.glClearColor(0.11372549019f, 0.11372549019f, 0.11372549019f, 1.0f);
 
         imGuiLayer = new ImGuiLayer();
 

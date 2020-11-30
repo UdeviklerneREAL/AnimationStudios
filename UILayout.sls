@@ -1,0 +1,6 @@
+bool imports: true
+bool keyframeAnimation: true
+bool inspector: true
+bool videoTimeline: true
+bool animator: true
+bool videoPlayer: true

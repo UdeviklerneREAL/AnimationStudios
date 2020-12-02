@@ -1,6 +1,7 @@
 package com.udeGames.animationStudios.imGui;
 
 import com.udeGames.animationStudios.imGui.panels.*;
+import com.udeGames.animationStudios.saving.Dialog;
 import com.udeGames.animationStudios.saving.SLSImplementation;
 import imgui.ImGuiViewport;
 import imgui.flag.ImGuiStyleVar;
@@ -9,16 +10,12 @@ import imgui.internal.ImGui;
 import imgui.internal.flag.ImGuiDockNodeFlags;
 import imgui.type.ImBoolean;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class ImGuiUI {
     private final HashMap<String, ImBoolean> imBooleanHashMap = new HashMap<>();
-    private final VideoPlayerPanel videoPlayerPanel = new VideoPlayerPanel();
-    private final ImportsPanel importsPanel = new ImportsPanel();
-    private final InspectorPanel inspectorPanel = new InspectorPanel();
-    private final VideoTimelinePanel videoTimelinePanel = new VideoTimelinePanel();
-    private final AnimatorPanel animatorPanel = new AnimatorPanel();
-    private final KeyframeAnimationPanel keyframeAnimationPanel = new KeyframeAnimationPanel();
+    private final HashMap<String, ImGuiPanel> imGuiPanelHashMap = new HashMap<>();
 
     public ImGuiUI() {
         ImBoolean current = SLSImplementation.loadImGuiLayout("videoPlayer");
@@ -29,80 +26,91 @@ public class ImGuiUI {
         imBooleanHashMap.put("inspector", current == null ? new ImBoolean(true) : current);
         current = SLSImplementation.loadImGuiLayout("videoTimeline");
         imBooleanHashMap.put("videoTimeline", current == null ? new ImBoolean(true) : current);
-
         current = SLSImplementation.loadImGuiLayout("keyframeAnimation");
         imBooleanHashMap.put("keyframeAnimation", current == null ? new ImBoolean(false) : current);
         current = SLSImplementation.loadImGuiLayout("animator");
         imBooleanHashMap.put("animator", current == null ? new ImBoolean(false) : current);
+
+        imGuiPanelHashMap.put("videoPlayerPanel", new VideoPlayerPanel());
+        imGuiPanelHashMap.put("importsPanel", new ImportsPanel());
+        imGuiPanelHashMap.put("inspectorPanel", new InspectorPanel());
+        imGuiPanelHashMap.put("videoTimelinePanel", new VideoTimelinePanel());
+        imGuiPanelHashMap.put("keyframeAnimationPanel", new KeyframeAnimationPanel());
+        imGuiPanelHashMap.put("animatorPanel", new AnimatorPanel());
     }
 
     public void render() {
         final int dockspaceId = ImGui.getID("space");
         showDockSpace(dockspaceId);
         if (imBooleanHashMap.get("videoPlayer").get()) {
-            renderPanel(videoPlayerPanel);
+            renderPanel(imGuiPanelHashMap.get("videoPlayerPanel"));
         }
         if (imBooleanHashMap.get("imports").get()) {
-            renderPanel(importsPanel);
+            renderPanel(imGuiPanelHashMap.get("importsPanel"));
         }
         if (imBooleanHashMap.get("inspector").get()) {
-            renderPanel(inspectorPanel);
+            renderPanel(imGuiPanelHashMap.get("inspectorPanel"));
         }
         if (imBooleanHashMap.get("videoTimeline").get()) {
-            renderPanel(videoTimelinePanel);
+            renderPanel(imGuiPanelHashMap.get("videoTimelinePanel"));
         }
         if (imBooleanHashMap.get("keyframeAnimation").get()) {
-            renderPanel(keyframeAnimationPanel);
+            renderPanel(imGuiPanelHashMap.get("keyframeAnimationPanel"));
         }
         if (imBooleanHashMap.get("animator").get()) {
-            renderPanel(animatorPanel);
+            renderPanel(imGuiPanelHashMap.get("animatorPanel"));
         }
 
         if (ImGui.beginMainMenuBar()) {
             if (ImGui.beginMenu("File")) {
                 if (ImGui.menuItem("New", "Ctrl+N")) {
-                    System.out.println("New");
+                    Dialog.openFolderDialog();
                 }
 
                 if (ImGui.menuItem("Open...", "Ctrl+O")) {
-
+                    Dialog.openFolderDialog();
                 }
 
                 if (ImGui.menuItem("Save...", "Ctrl+S")) {
-
+                    //TODO: save
                 }
 
                 if (ImGui.menuItem("Save As...", "Ctrl+Shift+S")) {
-                    System.out.println("Save As");
+                    //TODO: save as
+                }
+
+                if (ImGui.menuItem("Import...", "Ctrl+I")) {
+                    String[] stringArray = Dialog.openMultipleFileDialog("mp4,mov,flv,avi,png,jpg,jpeg,gif,mp3,wav");
+                    ImportsPanel.add(stringArray);
                 }
                 ImGui.endMenu();
             }
             if (ImGui.beginMenu("Windows")) {
                 if (ImGui.beginMenu("Animation")) {
                     if (ImGui.menuItem("Keyframe Animation", "", imBooleanHashMap.get("keyframeAnimation"))) {
-                        renderPanel(keyframeAnimationPanel);
+                        renderPanel(imGuiPanelHashMap.get("keyframeAnimationPanel"));
                     }
 
                     if (ImGui.menuItem("Animator", "", imBooleanHashMap.get("animator"))) {
-                        renderPanel(animatorPanel);
+                        renderPanel(imGuiPanelHashMap.get("animatorPanel"));
                     }
                     ImGui.endMenu();
                 }
                 if (ImGui.beginMenu("Default")) {
                     if (ImGui.menuItem("Video Player", "", imBooleanHashMap.get("videoPlayer"))) {
-                        renderPanel(videoPlayerPanel);
+                        renderPanel(imGuiPanelHashMap.get("videoPlayerPanel"));
                     }
 
                     if (ImGui.menuItem("Video Timeline", "", imBooleanHashMap.get("videoTimeline"))) {
-                        renderPanel(videoTimelinePanel);
+                        renderPanel(imGuiPanelHashMap.get("videoTimelinePanel"));
                     }
 
                     if (ImGui.menuItem("Imports", "", imBooleanHashMap.get("imports"))) {
-                        renderPanel(importsPanel);
+                        renderPanel(imGuiPanelHashMap.get("importsPanel"));
                     }
 
                     if (ImGui.menuItem("Inspector", "", imBooleanHashMap.get("inspector"))) {
-                        renderPanel(inspectorPanel);
+                        renderPanel(imGuiPanelHashMap.get("inspectorPanel"));
                     }
                     ImGui.endMenu();
                 }

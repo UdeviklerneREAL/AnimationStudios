@@ -1,6 +1,8 @@
 package com.udeGames.animationStudios;
 
+import com.udeGames.animationStudios.ffmpeg.FFMpegImplementation;
 import com.udeGames.animationStudios.imGui.ImGuiLayer;
+import com.udeGames.animationStudios.renderering.ImageLoader;
 import org.lwjgl.glfw.Callbacks;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWErrorCallback;
@@ -31,7 +33,6 @@ public class Main {
     }
 
     public void run(String title) {
-
         GLFWErrorCallback.createPrint(System.err).set();
 
         if (!GLFW.glfwInit()) {

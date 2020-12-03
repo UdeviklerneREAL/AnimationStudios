@@ -2,7 +2,12 @@ package com.udeGames.animationStudios.imGui;
 
 import com.udeGames.animationStudios.imGui.panels.*;
 import com.udeGames.animationStudios.saving.Dialog;
+import com.udeGames.animationStudios.Statics;
 import com.udeGames.animationStudios.saving.SLSImplementation;
+import com.udeGames.easySwing.JEasyAdvancedLayoutManager;
+import com.udeGames.easySwing.JEasyLayout;
+import com.udeGames.easySwing.JEasyLayoutManager;
+import com.udeGames.saveLoadSystem.SLSMain;
 import imgui.ImGuiViewport;
 import imgui.flag.ImGuiStyleVar;
 import imgui.flag.ImGuiWindowFlags;
@@ -10,7 +15,9 @@ import imgui.internal.ImGui;
 import imgui.internal.flag.ImGuiDockNodeFlags;
 import imgui.type.ImBoolean;
 
-import java.util.Arrays;
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
 import java.util.HashMap;
 
 public class ImGuiUI {
@@ -64,11 +71,51 @@ public class ImGuiUI {
         if (ImGui.beginMainMenuBar()) {
             if (ImGui.beginMenu("File")) {
                 if (ImGui.menuItem("New", "Ctrl+N")) {
-                    Dialog.openFolderDialog();
+                    String dialog = Dialog.openFolderDialog();
+                    if (!dialog.equals("")) {
+                        JEasyLayout jEasyLayout = new JEasyLayout("New Project", (int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 2), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 2));
+                        try {
+                            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+                            e.printStackTrace();
+                        }
+                        jEasyLayout.setup();
+                        jEasyLayout.setMinimumSize(new Dimension(215, 190));
+                        jEasyLayout.toFront();
+                        jEasyLayout.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                        jEasyLayout.add(new JLabel("Project Name:"), 100, 30, new JEasyAdvancedLayoutManager(JEasyLayoutManager.CENTER, -40, -80));
+                        JTextField _jTextField = new JTextField();
+                        JButton _jButton = new JButton("Create");
+                        jEasyLayout.add(_jTextField, 100, 30, new JEasyAdvancedLayoutManager(JEasyLayoutManager.CENTER, 40, -80));
+                        jEasyLayout.add(_jButton, 100, 30, new JEasyAdvancedLayoutManager(JEasyLayoutManager.BUTTON, 0, -30));
+                        _jButton.addActionListener(e -> {
+                            if (!_jTextField.getText().equals("")) {
+                                File projectFolder = new File(dialog + "/.animationStudios/");
+
+                                if (!projectFolder.exists()) {
+                                    projectFolder.mkdirs();
+                                }
+
+                                Statics.setProjectPath(dialog);
+                                Statics.setProjectName(_jTextField.getText());
+
+                                new SLSMain(projectFolder.getPath(), SLSMain.FileOrDir.CREATEDIR).encodeString(Statics.getProjectName(), "projectName", "project.saveLoadSystem");
+
+                                jEasyLayout.dispose();
+
+                                onNewScene();
+                            }
+                        });
+                    }
                 }
 
                 if (ImGui.menuItem("Open...", "Ctrl+O")) {
-                    Dialog.openFolderDialog();
+                    String dialog = Dialog.openFolderDialog();
+                    if (!dialog.equals("")) {
+                        Statics.setProjectPath(dialog);
+                        Statics.setProjectName(new SLSMain(dialog + "/.animationStudios/", SLSMain.FileOrDir.CREATEDIR).decodeString("projectName", "project.saveLoadSystem"));
+                        onNewScene();
+                    }
                 }
 
                 if (ImGui.menuItem("Save...", "Ctrl+S")) {
@@ -76,7 +123,7 @@ public class ImGuiUI {
                 }
 
                 if (ImGui.menuItem("Save As...", "Ctrl+Shift+S")) {
-                    //TODO: save as
+                    Statics.setProjectPath(!Dialog.openFolderDialog().equals("") ? Dialog.openFolderDialog() : Statics.getProjectPath());
                 }
 
                 if (ImGui.menuItem("Import...", "Ctrl+I")) {
@@ -121,8 +168,17 @@ public class ImGuiUI {
         }
     }
 
+    public void onNewScene() {
+        for (ImGuiPanel imGuiPanel : imGuiPanelHashMap.values()) {
+            imGuiPanel.onOpenNewProject();
+        }
+    }
+
     public void dispose() {
         SLSImplementation.saveImGUILayout(imBooleanHashMap);
+        for (ImGuiPanel panel : imGuiPanelHashMap.values()) {
+            panel.dispose();
+        }
     }
 
     private void showDockSpace(final int dockspaceId) {

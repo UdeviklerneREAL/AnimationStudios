@@ -28,8 +28,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b385e4ee-aa3d-4c54-8e27-b12145b739f0" name="Default Changelist" comment="add">
-      <change beforePath="$PROJECT_DIR$/UILayout.sls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/saving/SLSImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/saving/SLSImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstPartyLibs/eazySwing-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Statics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/saving/GSONImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UILayout.saveLoadSystem" beforeDir="false" afterPath="$PROJECT_DIR$/UILayout.saveLoadSystem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgui.ini" beforeDir="false" afterPath="$PROJECT_DIR$/imgui.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/ImGuiUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/ImGuiUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/ImGuiPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/ImGuiPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/ImportsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/ImportsPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,12 +74,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/FirstPartyLibs" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2678161" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\animateStudio\FirstPartyLibs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\dev\animateStudio\assets" />
       <recent name="C:\dev\animateStudio\firstPartyLibarys" />
@@ -210,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606924443856</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add">
+      <created>1606924708245</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606924708245</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

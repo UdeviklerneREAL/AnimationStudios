@@ -19,4 +19,8 @@ public abstract class ImGuiPanel {
     }
 
     public abstract void render();
+
+    public void onOpenNewProject() {}
+
+    public void dispose() {}
 }

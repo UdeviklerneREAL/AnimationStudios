@@ -103,6 +103,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        getInstance().run(Main.class.getSimpleName());
+        getInstance().run(Statics.getTitle());
     }
 }

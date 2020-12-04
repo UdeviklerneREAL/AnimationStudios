@@ -1,5 +1,6 @@
 package com.udeGames.animationStudios.imGui.panels;
 
+import com.google.gson.reflect.TypeToken;
 import com.udeGames.animationStudios.Statics;
 import com.udeGames.animationStudios.renderering.ImageLoader;
 import com.udeGames.animationStudios.renderering.Texture;
@@ -42,8 +43,12 @@ public class ImportsPanel extends ImGuiPanel {
                 }
 
                 scanner.close();
-                textureArrayList = GSONImplementation.getGsonInsistence().fromJson(builder.toString(), textureArrayList.getClass());
-            } catch (FileNotFoundException e) {
+                System.out.println(builder.toString());
+                textureArrayList = GSONImplementation.getGsonInsistence().fromJson(builder.toString(), new TypeToken<ArrayList<Texture>>() {}.getType());
+                for (Texture texture : textureArrayList) {
+                    texture.setId(ImageLoader.loadImage(ImageIO.read(new File(texture.getFilePath())), "").getId());
+                }
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -51,7 +56,9 @@ public class ImportsPanel extends ImGuiPanel {
 
     @Override
     public void dispose() {
-        GSONImplementation.toJson(textureArrayList, Statics.getProjectPath() + "/.animationStudios/imports.json");
+        if (!Statics.getProjectName().equals("")) {
+            GSONImplementation.toJson(textureArrayList, Statics.getProjectPath() + "/.animationStudios/imports.json");
+        }
     }
 
     public static void add(String[] strings) {

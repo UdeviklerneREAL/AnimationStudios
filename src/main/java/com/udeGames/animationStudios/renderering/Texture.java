@@ -1,14 +1,20 @@
 package com.udeGames.animationStudios.renderering;
 
 public class Texture {
-    private final int ID, WIDTH, HEIGHT;
-    private final String FILE_NAME;
+    private int WIDTH, HEIGHT;
+    private transient int ID;
+    private String FILE_NAME, FILE_PATH;
 
-    protected Texture(int id, int width, int height, String fileName) {
+    public Texture(int id, int width, int height, String fileName, String filePath) {
         this.ID = id;
         this.WIDTH = width;
         this.HEIGHT = height;
         this.FILE_NAME = fileName;
+        this.FILE_PATH = filePath;
+    }
+
+    public Texture() {
+
     }
 
     public int getId() {
@@ -25,5 +31,13 @@ public class Texture {
 
     public String getFileName() {
         return FILE_NAME;
+    }
+
+    public String getFilePath() {
+        return FILE_PATH;
+    }
+
+    public void setId(int ID) {
+        this.ID = ID;
     }
 }

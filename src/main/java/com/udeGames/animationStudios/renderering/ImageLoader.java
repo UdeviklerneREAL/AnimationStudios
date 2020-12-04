@@ -47,7 +47,7 @@ public class ImageLoader {
 
         STBImage.stbi_image_free(image);
 
-        return new Texture(textureID, width.get(0), height.get(0), new File(path).getName());
+        return new Texture(textureID, width.get(0), height.get(0), new File(path).getName(), path);
     }
 
     public static Texture loadImage(BufferedImage image, String path) {
@@ -77,6 +77,6 @@ public class ImageLoader {
 
         GL11.glTexImage2D(GL11.GL_TEXTURE_2D, 0, GL11.GL_RGBA8, image.getWidth(), image.getHeight(), 0, GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, buffer);
 
-        return new Texture(textureID, image.getWidth(), image.getHeight(), new File(path).getName());
+        return new Texture(textureID, image.getWidth(), image.getHeight(), new File(path).getName(), path);
     }
 }

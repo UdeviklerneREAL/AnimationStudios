@@ -28,11 +28,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b385e4ee-aa3d-4c54-8e27-b12145b739f0" name="Default Changelist" comment="add">
+      <change afterPath="$PROJECT_DIR$/.idea/animateStudio.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/backward.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/forward.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Shortcuts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Time.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiExtension.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/components/ImGuiComponents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/components/Transform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/VideoPlayerPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/basic/Lambda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imgui.ini" beforeDir="false" afterPath="$PROJECT_DIR$/imgui.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/ImportsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/ImportsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/ImageLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/ffmpeg/FFMpegImplementation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/ImGuiLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/ImGuiUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/AnimatorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/AnimatorPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/ImGuiPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/ImGuiPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/ImportsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/ImportsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/InspectorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/InspectorPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/KeyframeAnimationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/KeyframeAnimationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/VideoPlayerPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/VideoTimelinePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/VideoTimelinePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/Texture.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,9 +69,30 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="animateStudio" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -67,8 +112,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/FirstPartyLibs" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MarioYoutube-master/build.gradle" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2678161" />
   </component>
@@ -231,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607016330881</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add">
+      <created>1607071433511</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607071433511</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

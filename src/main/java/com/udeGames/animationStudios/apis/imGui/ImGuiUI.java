@@ -1,6 +1,6 @@
-package com.udeGames.animationStudios.imGui;
+package com.udeGames.animationStudios.apis.imGui;
 
-import com.udeGames.animationStudios.imGui.panels.*;
+import com.udeGames.animationStudios.apis.imGui.panels.*;
 import com.udeGames.animationStudios.saving.Dialog;
 import com.udeGames.animationStudios.Statics;
 import com.udeGames.animationStudios.saving.SLSImplementation;
@@ -23,6 +23,8 @@ import java.util.HashMap;
 public class ImGuiUI {
     private final HashMap<String, ImBoolean> imBooleanHashMap = new HashMap<>();
     private final HashMap<String, ImGuiPanel> imGuiPanelHashMap = new HashMap<>();
+
+    private static final ImBoolean imBoolean = new ImBoolean(true);
 
     public ImGuiUI() {
         ImBoolean current = SLSImplementation.loadImGuiLayout("videoPlayer");
@@ -47,8 +49,8 @@ public class ImGuiUI {
     }
 
     public void render() {
-        final int dockspaceId = ImGui.getID("space");
-        showDockSpace(dockspaceId);
+        final int dockSpaceId = ImGui.getID("space");
+        showDockSpace(dockSpaceId);
         if (imBooleanHashMap.get("videoPlayer").get()) {
             renderPanel(imGuiPanelHashMap.get("videoPlayerPanel"));
         }
@@ -118,14 +120,6 @@ public class ImGuiUI {
                     }
                 }
 
-                if (ImGui.menuItem("Save...", "Ctrl+S")) {
-                    //TODO: save
-                }
-
-                if (ImGui.menuItem("Save As...", "Ctrl+Shift+S")) {
-                    Statics.setProjectPath(!Dialog.openFolderDialog().equals("") ? Dialog.openFolderDialog() : Statics.getProjectPath());
-                }
-
                 if (ImGui.menuItem("Import...", "Ctrl+I")) {
                     String[] stringArray = Dialog.openMultipleFileDialog("mp4,mov,flv,avi,png,jpg,jpeg,gif,mp3,wav");
                     ImportsPanel.add(stringArray);
@@ -181,22 +175,26 @@ public class ImGuiUI {
         }
     }
 
-    private void showDockSpace(final int dockspaceId) {
+    private void showDockSpace(final int dockSpaceId) {
         final ImGuiViewport mainViewport = ImGui.getMainViewport();
-        final int windowFlags = ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoResize
-                | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoBringToFrontOnFocus | ImGuiWindowFlags.NoNavFocus | ImGuiWindowFlags.NoBackground;
+        int windowFlags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
 
-        ImGui.setNextWindowPos(mainViewport.getWorkPosX(), mainViewport.getWorkPosY());
+        ImGuiViewport viewport = ImGui.getMainViewport();
+
+        ImGui.setNextWindowPos(viewport.getPosX(), viewport.getPosY());
         ImGui.setNextWindowSize(mainViewport.getWorkSizeX(), mainViewport.getWorkSizeY());
         ImGui.setNextWindowViewport(mainViewport.getID());
         ImGui.pushStyleVar(ImGuiStyleVar.WindowRounding, 0);
         ImGui.pushStyleVar(ImGuiStyleVar.WindowBorderSize, 0);
+        windowFlags |= ImGuiWindowFlags.NoTitleBar |ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove;
+        windowFlags |= ImGuiWindowFlags.NoBringToFrontOnFocus | ImGuiWindowFlags.NoNavFocus;
+        windowFlags |= ImGuiWindowFlags.NoBackground;
 
         ImGui.pushStyleVar(ImGuiStyleVar.WindowPadding, 0, 0);
-        ImGui.begin("Dockspace Demo", windowFlags);
+        ImGui.begin("Dockspace Demo", imBoolean, windowFlags);
         ImGui.popStyleVar(3);
 
-        ImGui.dockSpace(dockspaceId, 0, 0, ImGuiDockNodeFlags.PassthruCentralNode);
+        ImGui.dockSpace(dockSpaceId, 0, 0, ImGuiDockNodeFlags.PassthruCentralNode);
         ImGui.end();
     }
 

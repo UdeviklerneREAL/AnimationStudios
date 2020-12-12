@@ -1,12 +1,8 @@
 package com.udeGames.animationStudios;
 
-import com.udeGames.animationStudios.ffmpeg.FFMpegImplementation;
-import com.udeGames.animationStudios.imGui.ImGuiLayer;
+import com.udeGames.animationStudios.apis.imGui.ImGuiLayer;
 import com.udeGames.animationStudios.renderering.ImageLoader;
-import org.lwjgl.glfw.Callbacks;
-import org.lwjgl.glfw.GLFW;
-import org.lwjgl.glfw.GLFWErrorCallback;
-import org.lwjgl.glfw.GLFWImage;
+import org.lwjgl.glfw.*;
 import org.lwjgl.glfw.GLFWImage.Buffer;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
@@ -21,6 +17,7 @@ public class Main {
     private Dimension resolution;
     private ImGuiLayer imGuiLayer;
     private static Main init = null;
+    private static final long NULL = 0L;
 
     private Main() {}
 
@@ -43,7 +40,6 @@ public class Main {
         GLFW.glfwWindowHint(GLFW.GLFW_RESIZABLE, GLFW.GLFW_TRUE);
 
         resolution = Toolkit.getDefaultToolkit().getScreenSize();
-        long NULL = 0L;
         window = GLFW.glfwCreateWindow(resolution.width, resolution.height, title, NULL, NULL);
         if (window == NULL) {
             throw new RuntimeException("Failed to create the GLFW window");
@@ -75,7 +71,19 @@ public class Main {
 
         imGuiLayer = new ImGuiLayer();
 
+        double previousTime = GLFW.glfwGetTime();
+        int frameCount = 0;
+
         while (!GLFW.glfwWindowShouldClose(window)) {
+            double currentTime = GLFW.glfwGetTime();
+            frameCount++;
+
+            if ( currentTime - previousTime >= 1.0 ) {
+                Time.setFPS(frameCount);
+                frameCount = 0;
+                previousTime = currentTime;
+            }
+
             GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
 
             loop();

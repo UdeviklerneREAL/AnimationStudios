@@ -1,4 +1,4 @@
-package com.udeGames.animationStudios.imGui.panels;
+package com.udeGames.animationStudios.apis.imGui.panels;
 
 import com.google.gson.reflect.TypeToken;
 import com.udeGames.animationStudios.Statics;
@@ -9,7 +9,6 @@ import imgui.internal.ImGui;
 
 import javax.imageio.ImageIO;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;

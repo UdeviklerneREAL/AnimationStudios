@@ -100,6 +100,8 @@ dependencies {
 
     implementation 'com.google.code.gson:gson:2.8.6'
 
+    implementation 'org.reflections:reflections:0.9.12'
+
     implementation name: 'saveLoadSystem-1.1'
     implementation name: 'eazySwing-1.0'
 }

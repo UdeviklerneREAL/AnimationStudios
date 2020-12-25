@@ -1,12 +1,16 @@
 package com.udeGames.animationStudios.apis.imGui;
 
+import com.udeGames.animationStudios.saving.Dialog;
 import imgui.ImGui;
 import imgui.flag.ImGuiCol;
 import imgui.flag.ImGuiStyleVar;
+import imgui.type.ImString;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
-public class ImGuiExtension extends ImGui {
+import java.io.File;
+
+public class ImGuiExtension {
 
     public static void drawVec2(String label, Vector2f values) {
         ImGui.pushID(label);
@@ -128,5 +132,20 @@ public class ImGuiExtension extends ImGui {
 
         ImGui.popStyleVar();
         ImGui.popID();
+    }
+
+    public static File drawFile(String label, File value, String fileTypes) {
+        ImString imString = new ImString(value.getAbsolutePath());
+        ImGui.text(label);
+        ImGui.sameLine();
+        ImGui.inputText("", imString);
+        ImGui.sameLine();
+        if (ImGui.button("...")) {
+            String path = Dialog.openOneFileDialog(fileTypes);
+            if (!path.equals("")) {
+                return new File(path);
+            }
+        }
+        return value;
     }
 }

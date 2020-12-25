@@ -2,8 +2,10 @@ package com.udeGames.animationStudios.apis.imGui.panels;
 
 import com.google.gson.reflect.TypeToken;
 import com.udeGames.animationStudios.Statics;
+import com.udeGames.animationStudios.apis.imGui.ImGuiPanel;
 import com.udeGames.animationStudios.renderering.ImageLoader;
 import com.udeGames.animationStudios.renderering.Texture;
+import com.udeGames.animationStudios.saving.Dialog;
 import com.udeGames.animationStudios.saving.GSONImplementation;
 import imgui.internal.ImGui;
 
@@ -23,9 +25,23 @@ public class ImportsPanel extends ImGuiPanel {
 
     @Override
     public void render() {
+        int i = 0;
         for (Texture texture : textureArrayList) {
-           ImGui.image(texture.getId(), ImGui.getWindowSizeX(), (float)(texture.getHeight()) / (float)(texture.getWidth()) * ImGui.getWindowSizeX());
+           ImGui.imageButton(texture.getId(), ImGui.getWindowSizeX(), (float)(texture.getHeight()) / (float)(texture.getWidth()) * ImGui.getWindowSizeX());
+           if (ImGui.beginDragDropSource()) {
+               ImGui.setDragDropPayloadObject("image" + i, texture.getId());
+               ImGui.endDragDropSource();
+           }
            ImGui.text(texture.getFileName());
+           i++;
+        }
+
+        if (ImGui.beginPopupContextWindow()) {
+            if (ImGui.menuItem("Import...")) {
+                String[] stringArray = Dialog.openMultipleFileDialog("mp4,mov,flv,avi,png,jpg,jpeg,gif,mp3,wav");
+                ImportsPanel.add(stringArray);
+            }
+            ImGui.endPopup();
         }
     }
 
@@ -72,5 +88,9 @@ public class ImportsPanel extends ImGuiPanel {
 
             }*/
         }
+    }
+
+    public static int getTextureArrayListLength() {
+        return textureArrayList.size();
     }
 }

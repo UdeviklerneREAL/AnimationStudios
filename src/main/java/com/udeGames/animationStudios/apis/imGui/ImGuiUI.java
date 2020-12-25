@@ -24,6 +24,7 @@ public class ImGuiUI {
     private final HashMap<String, ImBoolean> imBooleanHashMap = new HashMap<>();
     private final HashMap<String, ImGuiPanel> imGuiPanelHashMap = new HashMap<>();
 
+    private static ImBoolean addComponentBoolean = new ImBoolean(false);
     private static final ImBoolean imBoolean = new ImBoolean(true);
 
     public ImGuiUI() {
@@ -46,28 +47,30 @@ public class ImGuiUI {
         imGuiPanelHashMap.put("videoTimelinePanel", new VideoTimelinePanel());
         imGuiPanelHashMap.put("keyframeAnimationPanel", new KeyframeAnimationPanel());
         imGuiPanelHashMap.put("animatorPanel", new AnimatorPanel());
+
+        imGuiPanelHashMap.put("addComponentPanel", new AddComponentPanel((InspectorPanel) imGuiPanelHashMap.get("inspectorPanel")));
     }
 
     public void render() {
         final int dockSpaceId = ImGui.getID("space");
         showDockSpace(dockSpaceId);
         if (imBooleanHashMap.get("videoPlayer").get()) {
-            renderPanel(imGuiPanelHashMap.get("videoPlayerPanel"));
+            renderPanel(imGuiPanelHashMap.get("videoPlayerPanel"), imBooleanHashMap.get("videoPlayer"));
         }
         if (imBooleanHashMap.get("imports").get()) {
-            renderPanel(imGuiPanelHashMap.get("importsPanel"));
+            renderPanel(imGuiPanelHashMap.get("importsPanel"), imBooleanHashMap.get("imports"));
         }
         if (imBooleanHashMap.get("inspector").get()) {
-            renderPanel(imGuiPanelHashMap.get("inspectorPanel"));
+            renderPanel(imGuiPanelHashMap.get("inspectorPanel"), imBooleanHashMap.get("inspector"));
         }
         if (imBooleanHashMap.get("videoTimeline").get()) {
-            renderPanel(imGuiPanelHashMap.get("videoTimelinePanel"));
+            renderPanel(imGuiPanelHashMap.get("videoTimelinePanel"), imBooleanHashMap.get("videoTimeline"));
         }
         if (imBooleanHashMap.get("keyframeAnimation").get()) {
-            renderPanel(imGuiPanelHashMap.get("keyframeAnimationPanel"));
+            renderPanel(imGuiPanelHashMap.get("keyframeAnimationPanel"), imBooleanHashMap.get("keyframeAnimation"));
         }
         if (imBooleanHashMap.get("animator").get()) {
-            renderPanel(imGuiPanelHashMap.get("animatorPanel"));
+            renderPanel(imGuiPanelHashMap.get("animatorPanel"), imBooleanHashMap.get("animator"));
         }
 
         if (ImGui.beginMainMenuBar()) {
@@ -82,13 +85,19 @@ public class ImGuiUI {
                             e.printStackTrace();
                         }
                         jEasyLayout.setup();
-                        jEasyLayout.setMinimumSize(new Dimension(215, 190));
+                        jEasyLayout.setMinimumSize(new Dimension(215, 220));
                         jEasyLayout.toFront();
                         jEasyLayout.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                         jEasyLayout.add(new JLabel("Project Name:"), 100, 30, new JEasyAdvancedLayoutManager(JEasyLayoutManager.CENTER, -40, -80));
+                        jEasyLayout.add(new JLabel("Project Width:"), 100, 30, new JEasyAdvancedLayoutManager(JEasyLayoutManager.CENTER, -40, -40));
+                        jEasyLayout.add(new JLabel("Project Height:"), 100, 30, new JEasyAdvancedLayoutManager(JEasyLayoutManager.CENTER, -40, 0));
                         JTextField _jTextField = new JTextField();
+                        JTextField _jTextField1 = new JTextField();
+                        JTextField _jTextField2 = new JTextField();
                         JButton _jButton = new JButton("Create");
                         jEasyLayout.add(_jTextField, 100, 30, new JEasyAdvancedLayoutManager(JEasyLayoutManager.CENTER, 40, -80));
+                        jEasyLayout.add(_jTextField1, 100, 30, new JEasyAdvancedLayoutManager(JEasyLayoutManager.CENTER, 40, -40));
+                        jEasyLayout.add(_jTextField2, 100, 30, new JEasyAdvancedLayoutManager(JEasyLayoutManager.CENTER, 40, 0));
                         jEasyLayout.add(_jButton, 100, 30, new JEasyAdvancedLayoutManager(JEasyLayoutManager.BUTTON, 0, -30));
                         _jButton.addActionListener(e -> {
                             if (!_jTextField.getText().equals("")) {
@@ -100,8 +109,19 @@ public class ImGuiUI {
 
                                 Statics.setProjectPath(dialog);
                                 Statics.setProjectName(_jTextField.getText());
-
-                                new SLSMain(projectFolder.getPath(), SLSMain.FileOrDir.CREATEDIR).encodeString(Statics.getProjectName(), "projectName", "project.saveLoadSystem");
+                                try {
+                                    Statics.setWidth(Integer.parseInt(_jTextField1.getText()));
+                                    Statics.setHeight(Integer.parseInt(_jTextField2.getText()));
+                                } catch (NumberFormatException exception) {
+                                    JOptionPane.showMessageDialog(jEasyLayout, "You can't put a letter in the width or height field!");
+                                    _jTextField1.setText("");
+                                    _jTextField2.setText("");
+                                    return;
+                                }
+                                SLSMain slsMain =  new SLSMain(projectFolder.getPath(), SLSMain.FileOrDir.CREATEDIR);
+                                slsMain.encodeString(Statics.getProjectName(), "projectName", "project.saveLoadSystem");
+                                slsMain.encodeLong(Statics.getWidth(), "projectWidth", "project.saveLoadSystem");
+                                slsMain.encodeLong(Statics.getHeight(), "projectHeight", "project.saveLoadSystem");
 
                                 jEasyLayout.dispose();
 
@@ -114,8 +134,11 @@ public class ImGuiUI {
                 if (ImGui.menuItem("Open...", "Ctrl+O")) {
                     String dialog = Dialog.openFolderDialog();
                     if (!dialog.equals("")) {
+                        SLSMain slsMain = new SLSMain(dialog + "/.animationStudios/", SLSMain.FileOrDir.CREATEDIR);
                         Statics.setProjectPath(dialog);
-                        Statics.setProjectName(new SLSMain(dialog + "/.animationStudios/", SLSMain.FileOrDir.CREATEDIR).decodeString("projectName", "project.saveLoadSystem"));
+                        Statics.setProjectName(slsMain.decodeString("projectName", "project.saveLoadSystem"));
+                        Statics.setWidth((int) slsMain.decodeLong("projectWidth", "project.saveLoadSystem"));
+                        Statics.setHeight((int) slsMain.decodeLong("projectHeight", "project.saveLoadSystem"));
                         onNewScene();
                     }
                 }
@@ -160,6 +183,10 @@ public class ImGuiUI {
 
             ImGui.endMainMenuBar();
         }
+
+        if (addComponentBoolean.get()) {
+            renderPanel(imGuiPanelHashMap.get("addComponentPanel"), addComponentBoolean);
+        }
     }
 
     public void onNewScene() {
@@ -186,12 +213,11 @@ public class ImGuiUI {
         ImGui.setNextWindowViewport(mainViewport.getID());
         ImGui.pushStyleVar(ImGuiStyleVar.WindowRounding, 0);
         ImGui.pushStyleVar(ImGuiStyleVar.WindowBorderSize, 0);
-        windowFlags |= ImGuiWindowFlags.NoTitleBar |ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove;
+        windowFlags |= ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove;
         windowFlags |= ImGuiWindowFlags.NoBringToFrontOnFocus | ImGuiWindowFlags.NoNavFocus;
-        windowFlags |= ImGuiWindowFlags.NoBackground;
 
         ImGui.pushStyleVar(ImGuiStyleVar.WindowPadding, 0, 0);
-        ImGui.begin("Dockspace Demo", imBoolean, windowFlags);
+        ImGui.begin("Dockspace", imBoolean, windowFlags);
         ImGui.popStyleVar(3);
 
         ImGui.dockSpace(dockSpaceId, 0, 0, ImGuiDockNodeFlags.PassthruCentralNode);
@@ -200,5 +226,13 @@ public class ImGuiUI {
 
     private void renderPanel(ImGuiPanel imGuiPanel) {
         imGuiPanel.renderToImGui();
+    }
+
+    private void renderPanel(ImGuiPanel imGuiPanel, ImBoolean imBoolean) {
+        imGuiPanel.renderToImGui(imBoolean);
+    }
+
+    public static void setAddComponentBoolean(boolean addComponentBoolean) {
+        ImGuiUI.addComponentBoolean = new ImBoolean(addComponentBoolean);
     }
 }

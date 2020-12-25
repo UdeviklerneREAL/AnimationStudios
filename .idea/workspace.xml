@@ -28,36 +28,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b385e4ee-aa3d-4c54-8e27-b12145b739f0" name="Default Changelist" comment="add">
-      <change afterPath="$PROJECT_DIR$/.idea/animateStudio.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/backward.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/forward.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/pause.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Shortcuts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Time.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiExtension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/components/ImGuiComponents.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/components/Transform.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/VideoPlayerPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/basic/Lambda.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/components/TextureComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/AddComponentPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/AnimationFramebuffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/Framebuffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/Icon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/IconImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/utils/BufferToArrayUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/animateStudio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/animateStudio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imgui.ini" beforeDir="false" afterPath="$PROJECT_DIR$/imgui.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/ffmpeg/FFMpegImplementation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/ImGuiLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/ImGuiUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/AnimatorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/AnimatorPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/ImGuiPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/ImGuiPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/ImportsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/ImportsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/InspectorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/InspectorPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/KeyframeAnimationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/KeyframeAnimationPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/VideoPlayerPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/imGui/panels/VideoTimelinePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/VideoTimelinePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Statics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/Statics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiExtension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/components/ImGuiComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/components/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/components/TransformComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/AnimatorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/AnimatorPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/ImGuiPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/ImportsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/ImportsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/InspectorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/InspectorPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/KeyframeAnimationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/KeyframeAnimationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/VideoPlayerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/VideoPlayerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/VideoTimelinePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/panels/VideoTimelinePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/ImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/ImageLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/renderering/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/saving/GSONImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/saving/GSONImplementation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +102,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/udeGames/animationStudios/apis/imGui/ImGuiUI.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/../../Program Files/Amazon Corretto/jdk11.0.8_10/lib/src.zip!/java.base/java/lang/Class.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectId" id="1kYbDWmUkh0WB2vCSQT1nAjWuMN" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -112,7 +118,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MarioYoutube-master/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aiIDOntKnowWhatIAmDouing" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2678161" />
@@ -283,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607071433511</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add">
+      <created>1607756393472</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607756393472</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -302,5 +315,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add" />
     <option name="LAST_COMMIT_MESSAGE" value="add" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/animateStudio$Main.ic" NAME="Main Coverage Results" MODIFIED="1607759760194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.udeGames.animationStudios.renderering.*</FILTER>
+    </SUITE>
   </component>
 </project>

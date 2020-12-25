@@ -1,9 +1,10 @@
 package com.udeGames.animationStudios;
 
 import com.udeGames.animationStudios.apis.imGui.ImGuiLayer;
+import com.udeGames.animationStudios.renderering.AnimationFramebuffer;
+import com.udeGames.animationStudios.renderering.Icon;
 import com.udeGames.animationStudios.renderering.ImageLoader;
 import org.lwjgl.glfw.*;
-import org.lwjgl.glfw.GLFWImage.Buffer;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
 
@@ -53,12 +54,10 @@ public class Main {
         GLFW.glfwMakeContextCurrent(window);
 
         try {
-            Buffer buffer = GLFWImage.create(2);
-            GLFWImage icon = GLFWImage.create().set(250, 250, ImageLoader.loadIcon("assets/images/logo.png"));
-            GLFWImage smallIcon = GLFWImage.create().set(125, 125, ImageLoader.loadIcon("assets/images/smallLogo.png"));
-            buffer.put(0, icon);
-            buffer.put(1, smallIcon);
-            GLFW.glfwSetWindowIcon(window, buffer);
+            Icon icon = new Icon();
+            icon.addIcon(ImageLoader.loadIcon("assets/images/logo.png"));
+            icon.addIcon(ImageLoader.loadIcon("assets/images/smallLogo.png"));
+            GLFW.glfwSetWindowIcon(window, icon.getImage());
         } catch (IOException e) {
             System.out.println("Can't load image");
         }
@@ -66,8 +65,6 @@ public class Main {
         GLFW.glfwShowWindow(window);
 
         GL.createCapabilities();
-
-        GL11.glClearColor(0.11372549019f, 0.11372549019f, 0.11372549019f, 1.0f);
 
         imGuiLayer = new ImGuiLayer();
 
@@ -84,7 +81,11 @@ public class Main {
                 previousTime = currentTime;
             }
 
-            GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
+            if (AnimationFramebuffer.getFramebuffer() != null) {
+                AnimationFramebuffer.getFramebuffer().bind();
+                drawToViewport();
+                AnimationFramebuffer.getFramebuffer().unbind();
+            }
 
             loop();
 
@@ -104,6 +105,11 @@ public class Main {
     public void loop() {
         imGuiLayer.render();
         imGuiLayer.endFrame();
+    }
+
+    public void drawToViewport() {
+        GL11.glClearColor(0, 0, 0, 1.0f);
+        GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
     }
 
     public long getWindow() {

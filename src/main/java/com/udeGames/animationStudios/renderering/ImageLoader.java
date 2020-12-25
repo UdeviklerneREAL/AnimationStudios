@@ -1,5 +1,6 @@
 package com.udeGames.animationStudios.renderering;
 
+import com.udeGames.animationStudios.utils.BufferToArrayUtils;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
@@ -13,19 +14,21 @@ import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 
 public class ImageLoader {
-    public static ByteBuffer loadIcon(String path) throws IOException {
+    public static IconImage loadIcon(String path) throws IOException {
         ByteBuffer image;
+        IntBuffer w;
+        IntBuffer h;
         try (MemoryStack stack = MemoryStack.stackPush()) {
             IntBuffer comp = stack.mallocInt(1);
-            IntBuffer w = stack.mallocInt(1);
-            IntBuffer h = stack.mallocInt(1);
+            w = stack.mallocInt(1);
+            h = stack.mallocInt(1);
 
             image = STBImage.stbi_load(path, w, h, comp, 4);
             if (image == null) {
                 throw new IOException("Can't find image " + path);
             }
         }
-        return image;
+        return new IconImage(image, BufferToArrayUtils.intBufferToIntArray(w)[0], BufferToArrayUtils.intBufferToIntArray(h)[0]);
     }
 
     public static Texture loadImage(String path) {
@@ -44,6 +47,10 @@ public class ImageLoader {
         ByteBuffer image = STBImage.stbi_load(path, width, height, channels, 0);
 
         GL11.glTexImage2D(GL11.GL_TEXTURE_2D, 0, GL11.GL_RGBA, width.get(0), height.get(0), 0, GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, image);
+
+        if (image == null) {
+            throw new RuntimeException("image is null");
+        }
 
         STBImage.stbi_image_free(image);
 

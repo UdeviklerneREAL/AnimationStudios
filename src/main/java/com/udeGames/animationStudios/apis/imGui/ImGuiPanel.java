@@ -1,6 +1,7 @@
-package com.udeGames.animationStudios.apis.imGui.panels;
+package com.udeGames.animationStudios.apis.imGui;
 
 import imgui.internal.ImGui;
+import imgui.type.ImBoolean;
 
 public abstract class ImGuiPanel {
 
@@ -12,6 +13,14 @@ public abstract class ImGuiPanel {
 
     public void renderToImGui() {
         ImGui.begin(name);
+
+        render();
+
+        ImGui.end();
+    }
+
+    public void renderToImGui(ImBoolean imBoolean) {
+        ImGui.begin(name, imBoolean);
 
         render();
 

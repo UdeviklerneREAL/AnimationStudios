@@ -1,4 +1,4 @@
-package com.udeGames.animationStudios.apis.imGui.components;
+package com.udeGames.animationStudios.apis.imGui;
 
 import imgui.internal.ImGui;
 

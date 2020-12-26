@@ -3,7 +3,7 @@ package com.udeGames.animationStudios.apis.imGui.panels;
 import com.udeGames.animationStudios.Statics;
 import com.udeGames.animationStudios.apis.imGui.ImGuiObject;
 import com.udeGames.animationStudios.apis.imGui.ImGuiPanel;
-import com.udeGames.animationStudios.renderering.Texture;
+import com.udeGames.animationStudios.rendering.Texture;
 import com.udeGames.animationStudios.saving.GSONImplementation;
 import imgui.internal.ImGui;
 

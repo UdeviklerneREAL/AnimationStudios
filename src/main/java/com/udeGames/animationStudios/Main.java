@@ -1,12 +1,9 @@
 package com.udeGames.animationStudios;
 
 import com.udeGames.animationStudios.apis.imGui.ImGuiLayer;
-import com.udeGames.animationStudios.renderering.AnimationFramebuffer;
-import com.udeGames.animationStudios.renderering.Icon;
-import com.udeGames.animationStudios.renderering.ImageLoader;
+import com.udeGames.animationStudios.rendering.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.GL;
-import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
 import java.io.IOException;
@@ -15,8 +12,13 @@ import java.util.Objects;
 public class Main {
 
     private long window;
+    float[] vertices = {-0.5f, 0.5f, 0f, -0.5f, -0.5f, 0f, 0.5f, -0.5f, 0f, 0.5f,  0.5f, 0f};
+    short[] indices = {0, 1, 3, 3, 1, 2};
+    float[] textureCoordinates = {0, 0, 0, 1, 1, 1, 1, 0};
     private Dimension resolution;
     private ImGuiLayer imGuiLayer;
+    private MainShader shader;
+    private Sprite sprite;
     private static Main init = null;
     private static final long NULL = 0L;
 
@@ -67,6 +69,8 @@ public class Main {
         GL.createCapabilities();
 
         imGuiLayer = new ImGuiLayer();
+        shader = new MainShader();
+        sprite = Sprite.loadSpriteToVAO(vertices, indices, textureCoordinates, "assets/images/logo.png");
 
         double previousTime = GLFW.glfwGetTime();
         int frameCount = 0;
@@ -94,6 +98,9 @@ public class Main {
         }
 
         imGuiLayer.dispose();
+        Sprite.cleanUp();
+        Texture.cleanUp();
+        shader.dispose();
 
         Callbacks.glfwFreeCallbacks(window);
         GLFW.glfwDestroyWindow(window);
@@ -108,8 +115,10 @@ public class Main {
     }
 
     public void drawToViewport() {
-        GL11.glClearColor(0, 0, 0, 1.0f);
-        GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
+        Renderer.getInstance().clear();
+        shader.start();
+        Renderer.getInstance().render(sprite);
+        shader.stop();
     }
 
     public long getWindow() {

@@ -2,7 +2,7 @@ package com.udeGames.animationStudios.apis.imGui.panels;
 
 import com.udeGames.animationStudios.Statics;
 import com.udeGames.animationStudios.apis.imGui.ImGuiPanel;
-import com.udeGames.animationStudios.renderering.AnimationFramebuffer;
+import com.udeGames.animationStudios.rendering.AnimationFramebuffer;
 import imgui.ImVec2;
 import imgui.internal.ImGui;
 import org.joml.Vector2f;

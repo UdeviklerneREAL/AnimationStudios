@@ -1,7 +1,7 @@
 package com.udeGames.animationStudios.apis.imGui;
 
 import com.udeGames.animationStudios.apis.imGui.components.TransformComponent;
-import com.udeGames.animationStudios.renderering.Texture;
+import com.udeGames.animationStudios.rendering.Texture;
 
 import java.util.ArrayList;
 

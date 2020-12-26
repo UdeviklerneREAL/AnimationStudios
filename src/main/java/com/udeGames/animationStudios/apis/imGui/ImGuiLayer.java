@@ -41,7 +41,7 @@ public class ImGuiLayer {
         }
 
         imGuiGLFW.init(Main.getInstance().getWindow(), true);
-        imGuiG13.init("#version 330 core");
+        imGuiG13.init("#version 400 core");
     }
 
     public void render()  {

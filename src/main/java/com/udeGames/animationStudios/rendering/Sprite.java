@@ -6,7 +6,8 @@ import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
 
-import java.nio.FloatBuffer;
+import java.nio.DoubleBuffer;
+import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class Sprite {
         this.textureId = ImageLoader.loadImage(texture).getId();
     }
 
-    public static Sprite loadSpriteToVAO(float[] positions, short[] indices, float[] textureCoordinates, String texture) {
+    public static Sprite loadSpriteToVAO(double[] positions, short[] indices, double[] textureCoordinates, String texture) {
         int vaoID = createVAO();
         bindIndices(indices);
         storeData(0, 3, positions);
@@ -62,13 +63,13 @@ public class Sprite {
         return vaoID;
     }
 
-    private static void storeData(int abbrNumber, int size, float[] data) {
+    private static void storeData(int abbrNumber, int size, double[] data) {
         int vbo = GL15.glGenBuffers();
         vbos.add(vbo);
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, vbo);
-        FloatBuffer buffer = NewBufferUtils.storeDataInFloatBuffer(data);
+        DoubleBuffer buffer = NewBufferUtils.storeDataInDoubleBuffer(data);
         GL15.glBufferData(GL15.GL_ARRAY_BUFFER, buffer, GL15.GL_STATIC_DRAW);
-        GL20.glVertexAttribPointer(abbrNumber, size, GL11.GL_FLOAT, false, 0, 0);
+        GL20.glVertexAttribPointer(abbrNumber, size, GL11.GL_DOUBLE, false, 0, 0);
         GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0);
     }
 
@@ -79,7 +80,7 @@ public class Sprite {
     private static void bindIndices(short[] indices) {
         int vboId = GL15.glGenBuffers();
         vbos.add(vboId);
-        GL15.glBindBuffer(GL15.GL_ELEMENT_ARRAY_BUFFER,  vboId);
+        GL15.glBindBuffer(GL15.GL_ELEMENT_ARRAY_BUFFER, vboId);
         ShortBuffer buffer = NewBufferUtils.storeDataInShortBuffer(indices);
         GL15.glBufferData(GL15.GL_ELEMENT_ARRAY_BUFFER, buffer, GL15.GL_STATIC_DRAW);
     }

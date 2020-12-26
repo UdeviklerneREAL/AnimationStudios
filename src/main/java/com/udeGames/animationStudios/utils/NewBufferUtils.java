@@ -2,8 +2,9 @@ package com.udeGames.animationStudios.utils;
 
 import org.lwjgl.BufferUtils;
 
-import java.nio.FloatBuffer;
+import java.nio.DoubleBuffer;
 import java.nio.IntBuffer;
+import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
 import java.util.Arrays;
 
@@ -26,8 +27,8 @@ public class NewBufferUtils {
         return array;
     }
 
-    public static FloatBuffer storeDataInFloatBuffer(float[] data) {
-        FloatBuffer buffer = BufferUtils.createFloatBuffer(data.length);
+    public static DoubleBuffer storeDataInDoubleBuffer(double[] data) {
+        DoubleBuffer buffer = BufferUtils.createDoubleBuffer(data.length);
         buffer.put(data);
         buffer.flip();
         return buffer;

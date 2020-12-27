@@ -1,13 +1,19 @@
-package com.udeGames.animationStudios.rendering;
+package com.udeGames.animationStudios.utils;
 
+import org.joml.Matrix4f;
+import org.joml.Vector3f;
+import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.FloatBuffer;
 import java.util.Scanner;
 
 public class ShaderUtils {
+
+    private static final FloatBuffer matrixBuffer = BufferUtils.createFloatBuffer(16);
 
     private ShaderUtils() {}
 
@@ -81,6 +87,23 @@ public class ShaderUtils {
         return new int[] {
                 vertexId, fragmentId, shaderProgram
         };
+    }
+
+    public static void loadFloat(int location, float value) {
+        GL20.glUniform1f(location, value);
+    }
+
+    public static void loadVector3f(int location, Vector3f value) {
+        GL20.glUniform3f(location, value.x, value.y, value.z);
+    }
+
+    public static void loadBoolean(int location, boolean value) {
+        GL20.glUniform1f(location, value ? 1 : 0);
+    }
+
+    public static void loadMatrix4f(int location, Matrix4f value) {
+        value.get(matrixBuffer);
+        GL20.glUniformMatrix4fv(location, false, matrixBuffer);
     }
 
     private static class ShaderLinkingException extends RuntimeException {

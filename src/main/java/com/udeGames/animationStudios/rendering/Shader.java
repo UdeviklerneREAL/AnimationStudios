@@ -10,10 +10,6 @@ import org.lwjgl.opengl.GL20;
 public abstract class Shader {
     public abstract int[] getShader();
 
-    public void start() {
-        GL20.glUseProgram(getShader()[2]);
-    }
-
     public void stop() {
         GL20.glUseProgram(0);
     }
@@ -25,5 +21,13 @@ public abstract class Shader {
         GL20.glDeleteShader(getShader()[0]);
         GL20.glDeleteShader(getShader()[1]);
         GL20.glDeleteProgram(getShader()[2]);
+    }
+
+    public void start() {
+        GL20.glUseProgram(getShader()[2]);
+    }
+
+    protected int getUniformLocation(String uniformName) {
+        return GL20.glGetUniformLocation(getShader()[2], uniformName);
     }
 }

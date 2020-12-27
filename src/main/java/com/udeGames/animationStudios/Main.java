@@ -2,7 +2,8 @@ package com.udeGames.animationStudios;
 
 import com.udeGames.animationStudios.apis.imGui.ImGuiLayer;
 import com.udeGames.animationStudios.rendering.*;
-import com.udeGames.saveLoadSystem.SLSMain;
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.GL;
 
@@ -16,7 +17,7 @@ public class Main {
     private Dimension resolution;
     private ImGuiLayer imGuiLayer;
     private MainShader shader;
-    private Sprite sprite;
+    private Entity entity;
     private static Main init = null;
     private static final long NULL = 0L;
 
@@ -68,17 +69,11 @@ public class Main {
 
         imGuiLayer = new ImGuiLayer();
         shader = new MainShader();
-        SLSMain slsMain = new SLSMain("assets", SLSMain.FileOrDir.CREATEDIR);
-        double[] vertices = slsMain.decodeDoubleArray("vertices", "basicBox.saveLoadSystem");
-        long[] indicesLong = slsMain.decodeLongArray("indices", "basicBox.saveLoadSystem");
-        short[] indices = new short[indicesLong.length];
-        int i = 0;
-        for (long indiceLong : indicesLong) {
-            indices[i] = (short)indiceLong;
-            i++;
-        }
-        double[] textureCoordinates = slsMain.decodeDoubleArray("textureCoordinates", "basicBox.saveLoadSystem");
-        sprite = Sprite.loadSpriteToVAO(vertices, indices, textureCoordinates, "assets/images/logo.png");
+        double[] vertices = {-0.5f, 0.5f, 0f, -0.5f, -0.5f, 0f, 0.5f, -0.5f, 0f, 0.5f,  0.5f, 0f};
+        short[] indices = {0, 1, 3, 3, 1, 2};
+        double[] textureCoordinates = {0, 0, 0, 1, 1, 1, 1, 0};
+        Sprite sprite = Sprite.loadSpriteToVAO(vertices, indices, textureCoordinates, "assets/images/logo.png");
+        entity = new Entity(sprite, new Vector3f(0, 0, 0), new Quaternionf(), new Vector3f(1, 1, 1));
 
         double previousTime = GLFW.glfwGetTime();
         int frameCount = 0;
@@ -125,7 +120,8 @@ public class Main {
     public void drawToViewport() {
         Renderer.getInstance().clear();
         shader.start();
-        Renderer.getInstance().render(sprite);
+        Renderer.getInstance().render(entity, shader);
+        entity.increaseRotation(new Vector3f(0, 0.01f, 0));
         shader.stop();
     }
 

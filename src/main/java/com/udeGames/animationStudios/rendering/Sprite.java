@@ -7,7 +7,6 @@ import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
 
 import java.nio.DoubleBuffer;
-import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,14 +15,16 @@ public class Sprite {
     private final static List<Integer> vaos = new ArrayList<>();
     private final static List<Integer> vbos = new ArrayList<>();
 
+    private int aspectRatio;
     private final int vaoID;
-    private final int textureId;
     private final int vertexCount;
+    private final Texture texture;
 
     private Sprite(int vaoID, int vertexCount, String texture) {
         this.vaoID = vaoID;
         this.vertexCount = vertexCount;
-        this.textureId = ImageLoader.loadImage(texture).getId();
+        this.texture = ImageLoader.loadImage(texture);
+        this.aspectRatio = this.texture.getWidth() / this.texture.getHeight();
     }
 
     public static Sprite loadSpriteToVAO(double[] positions, short[] indices, double[] textureCoordinates, String texture) {
@@ -52,8 +53,8 @@ public class Sprite {
         return vertexCount;
     }
 
-    public int getTextureId() {
-        return textureId;
+    public Texture getTexture() {
+        return texture;
     }
 
     private static int createVAO() {

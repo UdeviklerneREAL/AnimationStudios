@@ -6,8 +6,10 @@
 
     out vec2 pass_textureCoordinates;
 
+    uniform mat4 transform;
+
     void main(void) {
-        gl_Position = vec4(position, 1.0);
+        gl_Position = transform * vec4(position, 1.0);
         pass_textureCoordinates = textureCoordinates;
     }
 

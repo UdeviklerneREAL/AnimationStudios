@@ -1,6 +1,8 @@
 package com.udeGames.animationStudios;
 
 import com.udeGames.animationStudios.apis.imGui.ImGuiLayer;
+import com.udeGames.animationStudios.apis.imGui.components.TransformComponent;
+import com.udeGames.animationStudios.apis.imGui.panels.VideoTimelinePanel;
 import com.udeGames.animationStudios.rendering.*;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
@@ -119,10 +121,25 @@ public class Main {
 
     public void drawToViewport() {
         Renderer.getInstance().clear();
-        shader.start();
-        Renderer.getInstance().render(entity, shader);
-        entity.increaseRotation(new Vector3f(0, 0.01f, 0));
-        shader.stop();
+        if (VideoTimelinePanel.getSelectedObject().getTexture() != null) {
+            entity.getSprite().getTexture().setId(VideoTimelinePanel.getSelectedObject().getTexture().getId());
+            TransformComponent transformComponent = (TransformComponent) VideoTimelinePanel.getSelectedObject().getComponent(TransformComponent.class);
+
+            entity.getPosition().x = transformComponent.getPosition().x;
+            entity.getPosition().y = transformComponent.getPosition().y;
+            entity.getPosition().z = transformComponent.getPosition().z;
+
+            entity.setRotation(transformComponent.getRotation());
+
+            entity.getScale().x = transformComponent.getScale().x;
+            entity.getScale().y = transformComponent.getScale().y;
+            entity.getScale().z = transformComponent.getScale().z;
+
+
+            shader.start();
+            Renderer.getInstance().render(entity, shader);
+            shader.stop();
+        }
     }
 
     public long getWindow() {

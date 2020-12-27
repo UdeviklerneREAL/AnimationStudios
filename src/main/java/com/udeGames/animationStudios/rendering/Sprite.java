@@ -15,7 +15,6 @@ public class Sprite {
     private final static List<Integer> vaos = new ArrayList<>();
     private final static List<Integer> vbos = new ArrayList<>();
 
-    private int aspectRatio;
     private final int vaoID;
     private final int vertexCount;
     private final Texture texture;
@@ -24,7 +23,6 @@ public class Sprite {
         this.vaoID = vaoID;
         this.vertexCount = vertexCount;
         this.texture = ImageLoader.loadImage(texture);
-        this.aspectRatio = this.texture.getWidth() / this.texture.getHeight();
     }
 
     public static Sprite loadSpriteToVAO(double[] positions, short[] indices, double[] textureCoordinates, String texture) {

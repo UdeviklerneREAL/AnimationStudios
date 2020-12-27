@@ -1,7 +1,9 @@
 package com.udeGames.animationStudios.apis.imGui;
 
 import com.udeGames.animationStudios.apis.imGui.components.TransformComponent;
+import com.udeGames.animationStudios.apis.imGui.panels.VideoTimelinePanel;
 import com.udeGames.animationStudios.rendering.Texture;
+import org.joml.Quaternionf;
 
 import java.util.ArrayList;
 
@@ -27,9 +29,18 @@ public class ImGuiObject {
         this.texture = texture;
     }
 
-    public <T extends ImGuiComponent> T addComponent(T component) {
+    public ImGuiComponent addComponent(ImGuiComponent component) {
         imGuiComponents.add(component);
         return component;
+    }
+
+    public ImGuiComponent getComponent(Class<? extends ImGuiComponent> imGuiComponentClass) {
+        for (ImGuiComponent imGuiComponent : VideoTimelinePanel.getSelectedObject().getImGuiComponents()) {
+            if (imGuiComponent.getClass() == imGuiComponentClass) {
+                return imGuiComponent;
+            }
+        }
+        return null;
     }
 
     public ArrayList<ImGuiComponent> getImGuiComponents() {

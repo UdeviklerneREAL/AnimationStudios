@@ -16,24 +16,6 @@ public class Entity {
         this.scale = scale;
     }
 
-    public void increasePosition(Vector3f position) {
-        this.position.x += position.x;
-        this.position.y += position.y;
-        this.position.z += position.z;
-    }
-
-    public void increaseRotation(Vector3f rotation) {
-        this.rotation.rotateX(rotation.x);
-        this.rotation.rotateY(rotation.y);
-        this.rotation.rotateZ(rotation.z);
-    }
-
-    public void increaseScale(Vector3f scale) {
-        this.scale.x += scale.x;
-        this.scale.y += scale.y;
-        this.scale.z += scale.z;
-    }
-
     public Sprite getSprite() {
         return sprite;
     }
@@ -54,8 +36,12 @@ public class Entity {
         return rotation;
     }
 
-    public void setRotation(Quaternionf rotation) {
-        this.rotation = rotation;
+    public void setRotation(Vector3f rotation) {
+        Quaternionf quaternionf = new Quaternionf();
+        quaternionf.rotateX(rotation.x);
+        quaternionf.rotateY(rotation.y);
+        quaternionf.rotateZ(rotation.z);
+        this.rotation = quaternionf;
     }
 
     public Vector3f getScale() {

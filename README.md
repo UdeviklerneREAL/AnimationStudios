@@ -8,3 +8,5 @@ an animation program made in java
  - [Reflections](https://github.com/ronmamo/reflections) by [Ronmamo](https://github.com/ronmamo/)
  - [SaveLoadSystem](https://github.com/UdeviklerneREAL/SaveLoadSystem) by [UdevikelerneREAL(my self)](https://github.com/UdeviklerneREAL/)
  - [EasySwing](https://github.com/UdeviklerneREAL/EasySwing) by [UdevikelerneREAL(my self)](https://github.com/UdeviklerneREAL/)
+## Development 
+ - Trello board: [https://trello.com/b/6T788sA3/animationstudios](https://trello.com/b/6T788sA3/animationstudios)
